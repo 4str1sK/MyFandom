@@ -1,0 +1,287 @@
+body {
+  background-color: #121212;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1005;
+    height: 80px;
+}
+
+/*Intro Section*/
+
+.intro {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100vh;
+    background-color: #161616;
+    transition: 1s; 
+}
+
+.logo-header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffff
+}
+
+.logo {
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+
+.logo.active {
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+/*NavBar Section*/
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 25%);
+  padding: 10px 40px;
+}
+
+.navbar .site-logo {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 26px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  padding-right: 90px;
+  flex-grow: 1;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+
+.nav-links li a:hover {
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 5px;
+}
+
+/*Page title*/
+
+.page-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+}
+
+/*Responsive Design*/
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .site-logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  .page-title {
+    font-size: 30px;
+    margin-top: 25px;
+    padding: 0 20px;
+  }
+
+  .intro .logo-header {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .site-logo {
+    font-size: 18px;
+  }
+
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+
+/*Layout*/
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 30px 50px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+  font-family: 'Sora', sans-serif;
+}
+
+.card-stats {
+  font-size: 0.9rem;
+  color: #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-thoughts {
+  font-size: 0.85rem;
+  color: #aaa;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/*Mobile*/
+
+@media (max-width: 500px) {
+  .gallery {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-stats {
+    font-size: 0.85rem;
+  }
+}
+
+/*Footer*/
+
+.footer {
+  background-color: hsl(0, 0%, 25%); /* same as navbar */
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+/*Mobile*/
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 13px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
